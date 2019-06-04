@@ -23,10 +23,6 @@ var T = new Twit({
 })
 
 
-T.post('statuses/update', { status: "Prueba de Heroku" }, function(err, data, response) {
-        console.log(data);
-    });
-
 var rule = new cron.RecurrenceRule();
 rule.hour = 14;
 cron.scheduleJob(rule, function(){
