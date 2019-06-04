@@ -5,8 +5,10 @@
   "request": "2.88.0",
   "twit": "2.2.11",
   "node-schedule": "1.3.2"
+  } 
 }
-  "main": "server.js",
+  "description": "Bot que recibe tiempo de la api de aemet y lo publica en twitter",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
