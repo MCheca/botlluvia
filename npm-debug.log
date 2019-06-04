@@ -1,0 +1,35 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\ProgramData\\Microsoft\\VisualStudio\\MDA\\86d8762e\\taco-toolset-6.3.1\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'node-cron' ]
+2 info using npm@2.15.10
+3 info using node@v11.0.0
+4 verbose install initial load of D:\Webs\BOTS\6611-522ea46a0caa1904e532cff4b4c736a3\package.json
+5 verbose stack Error: Failed to parse json
+5 verbose stack Unexpected token 'd' at 9:4
+5 verbose stack   "description": "Bot que recibe tiempo de la api de aemet y lo publica en twit
+5 verbose stack    ^
+5 verbose stack     at parseError (C:\ProgramData\Microsoft\VisualStudio\MDA\86d8762e\taco-toolset-6.3.1\node_modules\npm\node_modules\read-package-json\read-json.js:390:11)
+5 verbose stack     at parseJson (C:\ProgramData\Microsoft\VisualStudio\MDA\86d8762e\taco-toolset-6.3.1\node_modules\npm\node_modules\read-package-json\read-json.js:79:23)
+5 verbose stack     at C:\ProgramData\Microsoft\VisualStudio\MDA\86d8762e\taco-toolset-6.3.1\node_modules\npm\node_modules\read-package-json\read-json.js:48:5
+5 verbose stack     at C:\ProgramData\Microsoft\VisualStudio\MDA\86d8762e\taco-toolset-6.3.1\node_modules\npm\node_modules\graceful-fs\graceful-fs.js:78:16
+5 verbose stack     at FSReqCallback.readFileAfterClose [as oncomplete] (internal/fs/read_file_context.js:53:3)
+6 verbose cwd D:\Webs\BOTS\6611-522ea46a0caa1904e532cff4b4c736a3
+7 error Windows_NT 10.0.17134
+8 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\ProgramData\\Microsoft\\VisualStudio\\MDA\\86d8762e\\taco-toolset-6.3.1\\node_modules\\npm\\bin\\npm-cli.js" "install" "node-cron"
+9 error node v11.0.0
+10 error npm  v2.15.10
+11 error file D:\Webs\BOTS\6611-522ea46a0caa1904e532cff4b4c736a3\package.json
+12 error code EJSONPARSE
+13 error Failed to parse json
+13 error Unexpected token 'd' at 9:4
+13 error   "description": "Bot que recibe tiempo de la api de aemet y lo publica en twit
+13 error    ^
+14 error File: D:\Webs\BOTS\6611-522ea46a0caa1904e532cff4b4c736a3\package.json
+15 error Failed to parse package.json data.
+15 error package.json must be actual JSON, not just JavaScript.
+15 error
+15 error This is not a bug in npm.
+15 error Tell the package author to fix their package.json file. JSON.parse
+16 verbose exit [ 1, true ]
