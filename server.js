@@ -23,6 +23,8 @@ var T = new Twit({
 })
 
 
+peticion();
+
 var rule = new cron.RecurrenceRule();
 rule.hour = 14;
 cron.scheduleJob(rule, function(){
