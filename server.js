@@ -24,7 +24,7 @@ var T = new Twit({
 
 
 var rule = new cron.RecurrenceRule();
-rule.hour = 14;
+rule.hour = 19;
 cron.scheduleJob(rule, function(){
   if(!una){
     console.log('Son las 2, la hora de la lluvia');
@@ -34,14 +34,14 @@ cron.scheduleJob(rule, function(){
 });
 
 var reset = new cron.RecurrenceRule();
-reset.hour = 15;
+reset.hour = 20;
 cron.scheduleJob(reset, function(){
     una=false;
 });
 
 function tweetea(prob){
   //console.log(prob);
-  var no = ["Curiosamente hoy tampoco va a llover","Hoy tampoco llueve en Murcia", "Otro dia que no llueve en Murcia", "Hoy tampoco", "Parece que hoy no va a llover", "Que raro que hoy no llueva", "Hoy no va a llover", "Hoy no llueve en Murcia", "Ni una gota va a caer hoy"];
+  var no = ["Como va a llover en Murcia Acho!","Acho, hoy tampoco llueve","Curiosamente hoy tampoco va a llover","Hoy tampoco llueve en Murcia", "Otro dia que no llueve en Murcia", "Hoy tampoco", "Parece que hoy no va a llover", "Que raro que hoy no llueva", "Hoy no va a llover", "Hoy no llueve en Murcia", "Ni una gota va a caer hoy"];
   var puede = ["Hoy puede que llueva!", "Parece que hoy va a llover"];
   var si = ["HOY LLUEVE EN MURCIA!", "HOY SI QUE LLUEVE", "POR FIN LLUEVE!"];
 
