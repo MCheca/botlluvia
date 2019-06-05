@@ -23,21 +23,9 @@ var T = new Twit({
 })
 
 
-var rule = new cron.RecurrenceRule();
-rule.hour = 10;
-cron.scheduleJob(rule, function(){
-  if(!una){
-    console.log('Son las 2, la hora de la lluvia');
-    peticion();
-    una=true;
-  }
-});
+peticion();
+setInterval(peticion,1000*60*60*12);
 
-var reset = new cron.RecurrenceRule();
-reset.hour = 11;
-cron.scheduleJob(reset, function(){
-    una=false;
-});
 
 function tweetea(prob){
   //console.log(prob);
