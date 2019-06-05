@@ -5,7 +5,7 @@ var Twit = require('twit');
 var cron = require('node-schedule');
 var una=false;
 
-
+// Config
 var url2;
 var options = { method: 'GET',
   url: 'https://opendata.aemet.es/opendata/api/prediccion/especifica/municipio/diaria/30030', //MURCIA
@@ -22,10 +22,52 @@ var T = new Twit({
      strictSSL:            true,     // optional - requires SSL certificates to be valid.
 })
 
+// Fin Config
+
+//Main
 
 peticion();
 setInterval(peticion,1000*60*60*12);
 
+var stream = T.stream('statuses/filter', { track: ['@LluviaMurcia'] });
+stream.on('tweet', responder);
+
+//Fin Main
+
+//Funciones
+
+function responder(tweet) {
+
+    // Who sent the tweet?
+    var name = tweet.user.screen_name;
+    // What is the text?
+     var txt = tweet.text;
+    // the status update or tweet ID in which we will reply
+    var nameID  = tweet.id_str;
+
+     // Get rid of the @ mention
+    // var txt = txt.replace(/@myTwitterHandle/g, "");
+
+    // Start a reply back to the sender
+    if(txt.includes("rio") || txt.includes("río")){
+      var reply = "El rio? @" + name + ' ' + 'https://www.youtube.com/watch?v=FZlQ9oFnq08';
+    }
+    else{
+      var reply = "Hola! @" + name + ' ' + 'Gracias por la mención';
+    }
+    var params             = {
+                              status: reply,
+                              in_reply_to_status_id: nameID
+                             };
+
+    T.post('statuses/update', params, function(err, data, response) {
+      if (err !== undefined) {
+        console.log(err);
+      } else {
+        console.log('Tweeted: ' + params.status);
+      }
+    })
+};
 
 function tweetea(prob){
   //console.log(prob);
