@@ -3,6 +3,7 @@ var request = require("request");
 var request2 = require("request");
 var Twit = require('twit');
 var cron = require('node-schedule');
+var fs = require('fs');
 var una=false;
 
 // Config
@@ -51,6 +52,32 @@ function responder(tweet) {
     // Start a reply back to the sender
     if(txt.includes("rio") || txt.includes("río")){
       var reply = "El rio? @" + name + ' ' + 'https://www.youtube.com/watch?v=FZlQ9oFnq08';
+    }
+  else if(txt.includes("lloviendo")){
+      var myMessage = "Dices que está lloviendo @"+name+' ?'; // your message
+
+      // access and assign a random image in the images folder
+      var b64content = fs.readFileSync('./images/cuarto.jpg', { encoding: 'base64' })
+
+      // first we must post the media to Twitter then the alt text
+      T.post('media/upload', { media_data: b64content }, function (err, data, response) {
+
+        var mediaIdStr = data.media_id_string;
+        var altText = "Lluvia en murcia es un misterio (Iker Jimenez)";
+        var meta_params = { media_id: mediaIdStr, alt_text: { text: altText } }
+
+        T.post('media/metadata/create', meta_params, function (err, data, response) {
+          if (!err) {
+            // now we can reference the media and post a tweet (media will attach to the tweet)
+            var params = { status: myMessage, media_ids: [mediaIdStr] }
+
+            T.post('statuses/update', params, function (err, data , response) {
+              // check the response in the console
+              console.log(data)
+            })
+          }
+        })
+      })
     }
     else{
       var reply = "Hola! @" + name + ' ' + 'Gracias por la mención';
