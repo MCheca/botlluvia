@@ -24,7 +24,7 @@ var T = new Twit({
 
 
 var rule = new cron.RecurrenceRule();
-rule.hour = 19;
+rule.hour = 10;
 cron.scheduleJob(rule, function(){
   if(!una){
     console.log('Son las 2, la hora de la lluvia');
@@ -34,7 +34,7 @@ cron.scheduleJob(rule, function(){
 });
 
 var reset = new cron.RecurrenceRule();
-reset.hour = 20;
+reset.hour = 11;
 cron.scheduleJob(reset, function(){
     una=false;
 });
