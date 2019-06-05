@@ -57,7 +57,7 @@ function responder(tweet) {
       var myMessage = "Dices que está lloviendo @"+name+' ?'; // your message
 
       // access and assign a random image in the images folder
-      var b64content = fs.readFileSync('./images/cuarto.jpg', { encoding: 'base64' })
+      var b64content = fs.readFileSync('cuarto.jpg', { encoding: 'base64' })
 
       // first we must post the media to Twitter then the alt text
       T.post('media/upload', { media_data: b64content }, function (err, data, response) {
