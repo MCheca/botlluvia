@@ -98,9 +98,10 @@ function responder(tweet) {
 
 function tweetea(prob){
   //console.log(prob);
-  var no = ["Como va a llover en Murcia Acho!","Acho, hoy tampoco llueve","Curiosamente hoy tampoco va a llover","Hoy tampoco llueve en Murcia", "Otro dia que no llueve en Murcia", "Hoy tampoco", "Parece que hoy no va a llover", "Que raro que hoy no llueva", "Hoy no va a llover", "Hoy no llueve en Murcia", "Ni una gota va a caer hoy"];
+  var no = ["Hoy hace ☀️","Como va a llover en Murcia Acho!","Acho, hoy tampoco llueve 🌞","Curiosamente hoy tampoco va a llover","Hoy tampoco llueve en Murcia", "Otro dia que no llueve en Murcia", "Hoy tampoco", "Parece que hoy no va a llover", "Que raro que hoy no llueva", "Acho, hoy no va a llover", "Hoy no llueve en Murcia", "Ni una gota va a caer hoy pijo"];
   var puede = ["Hoy puede que llueva!", "Parece que hoy va a llover"];
-  var si = ["HOY LLUEVE EN MURCIA!", "HOY SI QUE LLUEVE", "POR FIN LLUEVE!"];
+  var si = ["🌧 HOY LLUEVE EN MURCIA! 🌧", "🌧 HOY SI QUE LLUEVE 🌧", "🌧 POR FIN LLUEVE! 🌧"];
+
 
 
   if(prob<10){
